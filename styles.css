@@ -33,7 +33,7 @@
 
 .stats {
   grid-column: span 1;
-  border: 2px solid green;
+  background-color: #38bdf8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +51,20 @@
 
 .add{
   grid-column: span 1;
-  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #38bdf8;
+}
+
+.add button {
+  width: 50%;
+  height: 40%;
+  border-radius: 20px;
+  border: none;
+  background-color: #075985;
+  color: white;
+  font-size: xx-large;
 }
 
 .book-list {
