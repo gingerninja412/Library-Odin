@@ -11,8 +11,12 @@ const addForm = $(".form-container")
 const titleField = $("#title-field")
 const authorField = $("#author-field")
 const pageField = $("#pages-field")
+const bookCount = $("#bookCount")
+const readCount = $("#readCount")
+const unreadCount = $("#unreadCount")
 
-
+//array holding all books
+let library = []
 
 //helper functions
 function createBook() {
@@ -41,11 +45,32 @@ function displayBook(book) {
   newBook.append(deleteButton)
 }
 
+function countBooks () {
+  let newValue = library.length
+  bookCount.text(`books ${newValue}`)
+}
+
+function countRead () {
+  let newLibrary = library.filter((item) => {return item.readStatus == "yes"})
+  let newValue = newLibrary.length
+  readCount.text(`read: ${newValue}`)
+}
+
+function countUnread () {
+  let newLibrary = library.filter((item) => {return item.readStatus == "no"})
+  let newValue = newLibrary.length
+  unreadCount.text(`unread: ${newValue}`)
+}
+
 //functions tied to buttons
 function newBook() {
   let newBook = createBook()
+  library.push(newBook)
   displayBook(newBook)
   removeForm()
+  countBooks()
+  countRead()
+  countUnread()
 } 
 
 function getForm () {
@@ -58,4 +83,7 @@ function removeForm () {
 
 window.onload = () => {
  removeForm()
+ countBooks()
+ countRead()
+ countUnread()
 }
