@@ -47,6 +47,7 @@
   align-items: center;
   width: 50%;
   font-size: x-large;
+  gap: 20px;
 }
 
 .add{
@@ -67,6 +68,10 @@
   font-size: xx-large;
 }
 
+.add button:active {
+  background-color: red;
+}
+
 .book-list {
   grid-column: span 2;
   background-color: #38bdf8;
@@ -83,6 +88,22 @@
   height: 200px;
   background-color: #075985;
   border: 2px solid red;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+}
+
+.book-card h3{
+  margin-top: 10px;
+
+}
+
+.book-card button {
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #7dd3fc;
 }
 
 .form-container {
@@ -128,4 +149,17 @@
   border: none;
   background-color: #075985;
   color: white;
+}
+
+.radio  input{
+  width: 20px;
+  height: 20px;
+}
+
+.read {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }

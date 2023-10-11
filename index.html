@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="index.js" defer></script>
-</head>
-<body>
-  <div class="form-container">
-    <div class="form">
-      <h2>Enter details about your book</h2>
-      <div class="form-item">
-        <h3>Enter the title</h3>
-        <input type="text" placeholder="Title">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form">
+        <h2>Enter details about your book</h2>
+        <div class="form-item">
+          <h3>Enter the title</h3>
+          <input type="text" placeholder="Title" id="title-field">
+        </div>
+        <div class="form-item">
+          <h3>Enter the author</h3>
+          <input type="text" placeholder="Author" id="author-field">
+        </div>
+        <div class="form-item">
+          <h3>Enter the number of pages</h3>
+          <input type="number" placeholder="Number Of Pages" id="pages-field">
+        </div>
+        <div class="radio">
+          <h3>Have you read the book</h3>
+          <div class="read">
+            <input type="radio" id="yes" name="readStatus" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="readStatus" value="no">
+            <label for="no">no</label>
+          </div>
+        </div>
+        <button onclick="newBook()">Add book</button>
+        <button onclick="removeForm()">Cancel</button>
       </div>
-      <div class="form-item">
-        <h3>Enter the author</h3>
-        <input type="text" placeholder="Author">
+    </div>
+    <div class="container">
+      <div class="title">
+        <h1>Book tracker</h1>
+        <div class="divider"></div>
       </div>
-      <div class="form-item">
-        <h3>Enter the number of pages</h3>
-        <input type="text" placeholder="Number Of Pages">
+      <div class="stats">
+        <div class="stats-pane">
+          <h3>books:</h3>
+          <h3>read:</h3>
+          <h3>unread:</h3>
+        </div>
+        <div class="divider"></div>
       </div>
-      <div class="form-item">
+      <div class="add">
+        <button onclick="getForm()" >Add Book</button>
+      </div>
+      <div class="book-list">
+      </div>
+    </div>
   
-      </div>
-      <button>Add book</button>
-    </div>
-  </div>
-  <div class="container">
-    <div class="title">
-      <h1>Book tracker</h1>
-      <div class="divider"></div>
-    </div>
-    <div class="stats">
-      <div class="stats-pane">
-        <h3>books:</h3>
-        <h3>read:</h3>
-        <h3>unread:</h3>
-      </div>
-      <div class="divider"></div>
-    </div>
-    <div class="add">
-      <button>Add Book</button>
-    </div>
-    <div class="book-list">
-    </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+    <script src="index.js"></script>
+  </body>
 </html>
