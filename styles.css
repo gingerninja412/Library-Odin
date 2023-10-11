@@ -69,7 +69,7 @@
 
 .book-list {
   grid-column: span 2;
-  border: 2px solid purple;
+  background-color: #38bdf8;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(5%, 20%));
   gap: 20px;
@@ -83,4 +83,49 @@
   height: 200px;
   background-color: #075985;
   border: 2px solid red;
+}
+
+.form-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form{
+  width: 500px;
+  height: 500px;
+  background-color: #7dd3fc;
+  border-radius: 40px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form .form-item input{
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 20px;
+  background-color: #075985;
+  color: white;
+}
+
+.form .form-item input:focus {
+  outline: none;
+}
+
+.form button {
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #075985;
+  color: white;
 }
