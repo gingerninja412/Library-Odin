@@ -70,4 +70,17 @@
 .book-list {
   grid-column: span 2;
   border: 2px solid purple;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5%, 20%));
+  gap: 20px;
+  padding-top: 20px;
+  padding-left: 10%;
+  overflow-y: scroll;
+}
+
+.book-card {
+  width: 300px;
+  height: 200px;
+  background-color: #075985;
+  border: 2px solid red;
 }
