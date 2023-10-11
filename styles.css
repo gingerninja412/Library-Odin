@@ -1,4 +1,33 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20% 20% 60%;
+  border: 2px solid black;
+  height: 100vh;
+}
+
+.title{
+  grid-column: span 2;
+  border: 2px solid red;
+}
+
+.stats {
+  grid-column: span 1;
+  border: 2px solid green;
+}
+
+.add{
+  grid-column: span 1;
+  border: 2px solid blue;
+}
+
+.book-list {
+  grid-column: span 2;
+  border: 2px solid purple;
 }
