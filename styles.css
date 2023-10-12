@@ -76,7 +76,7 @@
   grid-column: span 2;
   background-color: #38bdf8;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5%, 20%));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 20%));
   gap: 20px;
   padding-top: 20px;
   padding-left: 10%;
@@ -84,8 +84,8 @@
 }
 
 .book-card {
-  width: 300px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   background-color: #075985;
   border: 2px solid red;
   border-radius: 20px;
