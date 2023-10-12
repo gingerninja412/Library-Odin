@@ -24,6 +24,31 @@ function createBook() {
   return new Book(titleField.val(), authorField.val(), pageField.val(), readStatus.val())
 }
 
+function deleteBook(object) {
+  let name = object.parentElement.parentElement.children[0].innerText;
+  let removeIndex = library.map((item => {return item.title})).indexOf(name);
+  library.splice(removeIndex, 1)
+  object.parentElement.parentElement.remove()
+  countBooks()
+  countRead()
+  countUnread()
+}
+
+function changeReadStatus(object) {
+  let name = object.parentElement.parentElement.children[0].innerText;
+  let bookToChangeIndex = library.map((item => {return item.title})).indexOf(name);
+  
+  if(library[bookToChangeIndex].readStatus == "yes") {
+    library[bookToChangeIndex].readStatus = "no"
+    object.parentElement.parentElement.children[3].innerText = "You have not read this book";
+  } else {
+    library[bookToChangeIndex].readStatus = "yes"
+    object.parentElement.parentElement.children[3].innerText = `You have read this book`;
+  }
+  console.log(library[bookToChangeIndex].readStatus)
+  
+}
+
 function displayBook(book) {
   let newBook = $("<div class='book-card'></div>")
   newBook.addClass("book-card")
@@ -41,8 +66,8 @@ function displayBook(book) {
     newBook.append(read)
   }
   bookList.append(newBook)
-  let deleteButton = $("<button>cancel</button>")
-  newBook.append(deleteButton)
+  let buttons = $("<div class='book-card-buttons'><button class='delete-button' onclick='deleteBook(this)'>Delete</button><button class='toggle-read' onclick='changeReadStatus(this)'>Toggle read</button></div>")
+  newBook.append(buttons)
 }
 
 function countBooks () {
