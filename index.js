@@ -25,11 +25,11 @@ let library = [];
 
 //button functions
 function newBook() {
-  const readStatus = $("input[name='readStatus']:checked").value;
-  let book = new Book(titleField.value, authorField.value, pageField.value, readStatus);
+  const readStatus = $("input[name='readStatus']:checked").val();
+  let book = new Book(titleField.val(), authorField.val(), pageField.val(), readStatus);
   let bookCard = $("<div class='book-card'></div>")
   let title = $("<h3></h3>")
-  title.text(book.title)
+  title.text(book.name)
   bookCard.append(title)
   let author = $("<h3></h3>")
   author.text(book.author)
