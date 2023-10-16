@@ -5,8 +5,7 @@ class Book {
     this.pageCount = pageCount
     this.readStatus = readStatus
   }
-
-
+  
 }
 
 //DOM elements
@@ -27,8 +26,8 @@ let library = [];
 
 //button functions
 function newBook() {
-  const readStatus = $("input[name='readStatus']:checked");
-  let book = new Book(titleField.value(), authorField.value(), pageField.value(), readStatus);
+  const readStatus = $("input[name='readStatus']:checked").value;
+  let book = new Book(titleField.value, authorField.value, pageField.value, readStatus);
   let bookCard = $("<div class='book-card'></div>")
   let title = $(`<h3>${book.name}</h3>`)
   bookCard.append(title)
@@ -44,4 +43,17 @@ function newBook() {
   }
   bookCard.append(read)
   bookList.append(bookCard)
+  console.log("this works")
+}
+
+function getForm () {
+  addForm.css("display", "flex")
+}
+
+function removeForm () {
+  addForm.css("display", "none")
+}
+
+window.onload = () => {
+ removeForm()
 }
