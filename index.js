@@ -27,5 +27,21 @@ let library = [];
 
 //button functions
 function newBook() {
-  let book = new Book(titleField.value(), authorField.value(), pageField.value(), )
+  const readStatus = $("input[name='readStatus']:checked");
+  let book = new Book(titleField.value(), authorField.value(), pageField.value(), readStatus);
+  let bookCard = $("<div class='book-card'></div>")
+  let title = $(`<h3>${book.name}</h3>`)
+  bookCard.append(title)
+  let author = $(`<h3>${book.author}</h3>`)
+  bookCard.append(author)
+  let pageCount = $(`<h3>pages: ${book.pageCount}</h3>`)
+  bookCard.append(pageCount)
+  let read = null
+  if (readStatus == "yes") {
+    read = $(`<h3>already read</h3>`)
+  } else {
+    read = $(`<h3>not read yet</h3>`)
+  }
+  bookCard.append(read)
+  bookList.append(bookCard)
 }
