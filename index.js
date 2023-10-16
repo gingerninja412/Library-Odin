@@ -53,7 +53,18 @@ function newBook() {
 
 function changeReadStatus(object) {
   let bookStatus = object.parentElement.parentElement.children[3]
-  let indexToChange = library.map(item => {item.name}).indexOf()
+  let name = object.parentElement.parentElement.children[0].innerText
+  let indexToChange = library.map(item => {return item.name}).indexOf(name)
+  console.log(indexToChange)
+
+  if(bookStatus == "already read") {
+    library[indexToChange].readStatus = "no"
+    bookStatus.innerText = "not read yet"
+    console.log(bookStatus)
+  } else if (bookStatus == "not read yet") {
+    library[indexToChange].readStatus = "yes"
+    bookStatus.innerText = "already read"
+  }
 }
 
 function getForm () {
