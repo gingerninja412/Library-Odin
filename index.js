@@ -19,6 +19,9 @@ const bookCount = $("#bookCount")
 const readCount = $("#readCount")
 const unreadCount = $("#unreadCount")
 
+//library array
+let library = [];
+
 //helper functions
 
 
