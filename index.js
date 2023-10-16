@@ -26,4 +26,6 @@ let library = [];
 
 
 //button functions
-
+function newBook() {
+  let book = new Book(titleField.value(), authorField.value(), pageField.value(), )
+}
