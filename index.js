@@ -52,18 +52,16 @@ function newBook() {
 }
 
 function changeReadStatus(object) {
-  let bookStatus = object.parentElement.parentElement.children[3]
   let name = object.parentElement.parentElement.children[0].innerText
   let indexToChange = library.map(item => {return item.name}).indexOf(name)
   console.log(indexToChange)
 
-  if(bookStatus == "already read") {
+  if(object.parentElement.parentElement.children[3].innerText == "already read") {
     library[indexToChange].readStatus = "no"
-    bookStatus.innerText = "not read yet"
-    console.log(bookStatus)
-  } else if (bookStatus == "not read yet") {
+    object.parentElement.parentElement.children[3].innerText = "not read yet"
+  } else if (object.parentElement.parentElement.children[3].innerText == "not read yet") {
     library[indexToChange].readStatus = "yes"
-    bookStatus.innerText = "already read"
+    object.parentElement.parentElement.children[3].innerText = "already read"
   }
 }
 
