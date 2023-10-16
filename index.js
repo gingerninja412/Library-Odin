@@ -70,6 +70,16 @@ function newBook() {
   countUnread()
 }
 
+function deleteBook(object) {
+  let name = object.parentElement.parentElement.children[0].innerText;
+  let removeIndex = library.map((item => {return item.title})).indexOf(name);
+  library.splice(removeIndex, 1)
+  object.parentElement.parentElement.remove()
+  countBooks()
+  countRead()
+  countUnread()
+}
+
 function changeReadStatus(object) {
   let name = object.parentElement.parentElement.children[0].innerText
   let indexToChange = library.map(item => {return item.name}).indexOf(name)
