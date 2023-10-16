@@ -23,6 +23,22 @@ const unreadCount = $("#unreadCount")
 
 //helper functions
 
+function countBooks () {
+  let newValue = library.length
+  bookCount.text(`books ${newValue}`)
+}
+
+function countRead () {
+  let newLibrary = library.filter((item) => {return item.readStatus == "yes"})
+  let newValue = newLibrary.length
+  readCount.text(`read: ${newValue}`)
+}
+
+function countUnread () {
+  let newLibrary = library.filter((item) => {return item.readStatus == "no"})
+  let newValue = newLibrary.length
+  unreadCount.text(`unread: ${newValue}`)
+}
 
 //button functions
 function newBook() {
@@ -49,6 +65,9 @@ function newBook() {
   bookCard.append(buttons)
   bookList.append(bookCard)
   removeForm()
+  countBooks()
+  countRead()
+  countUnread()
 }
 
 function changeReadStatus(object) {
@@ -63,7 +82,12 @@ function changeReadStatus(object) {
     library[indexToChange].readStatus = "yes"
     object.parentElement.parentElement.children[3].innerText = "already read"
   }
+  countBooks()
+  countRead()
+  countUnread()
 }
+
+
 
 function getForm () {
   addForm.css("display", "flex")
@@ -75,4 +99,7 @@ function removeForm () {
 
 window.onload = () => {
  removeForm()
+ countBooks()
+ countRead()
+ countUnread()
 }
