@@ -52,7 +52,8 @@ function newBook() {
 }
 
 function changeReadStatus(object) {
-  console.log(object)
+  let bookStatus = object.parentElement.parentElement.children[3]
+  let indexToChange = library.map(item => {item.name}).indexOf()
 }
 
 function getForm () {
