@@ -44,6 +44,8 @@ function newBook() {
     read = $(`<h3>not read yet</h3>`)
   }
   bookCard.append(read)
+  let buttons = $("<div class='book-card-buttons'><button class='delete-button' onclick='deleteBook(this)'>Delete</button><button class='toggle-read' onclick='changeReadStatus(this)'>Toggle read</button></div>")
+  bookCard.append(buttons)
   bookList.append(bookCard)
   removeForm()
 }
