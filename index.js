@@ -1,9 +1,13 @@
+//library array
+let library = [];
+
 class Book {
   constructor (name, author, pageCount, readStatus) {
     this.name = name
     this.author = author
     this.pageCount = pageCount
     this.readStatus = readStatus
+    library.push(this)
   }
 }
 
@@ -16,9 +20,6 @@ const pageField = $("#pages-field")
 const bookCount = $("#bookCount")
 const readCount = $("#readCount")
 const unreadCount = $("#unreadCount")
-
-//library array
-let library = [];
 
 //helper functions
 
@@ -48,6 +49,10 @@ function newBook() {
   bookCard.append(buttons)
   bookList.append(bookCard)
   removeForm()
+}
+
+function changeReadStatus(object) {
+  console.log(object)
 }
 
 function getForm () {
