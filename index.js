@@ -5,7 +5,6 @@ class Book {
     this.pageCount = pageCount
     this.readStatus = readStatus
   }
-  
 }
 
 //DOM elements
@@ -29,11 +28,14 @@ function newBook() {
   const readStatus = $("input[name='readStatus']:checked").value;
   let book = new Book(titleField.value, authorField.value, pageField.value, readStatus);
   let bookCard = $("<div class='book-card'></div>")
-  let title = $(`<h3>${book.name}</h3>`)
+  let title = $("<h3></h3>")
+  title.text(book.title)
   bookCard.append(title)
-  let author = $(`<h3>${book.author}</h3>`)
+  let author = $("<h3></h3>")
+  author.text(book.author)
   bookCard.append(author)
-  let pageCount = $(`<h3>pages: ${book.pageCount}</h3>`)
+  let pageCount = $("<h3></h3>")
+  pageCount.text("pages:" + book.pageCount)
   bookCard.append(pageCount)
   let read = null
   if (readStatus == "yes") {
@@ -43,7 +45,7 @@ function newBook() {
   }
   bookCard.append(read)
   bookList.append(bookCard)
-  console.log("this works")
+  removeForm()
 }
 
 function getForm () {
